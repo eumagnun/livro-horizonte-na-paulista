@@ -1,0 +1,9 @@
+country,country_name,risk_score,is_tax_haven
+BR,Brasil,0.05,False
+US,Estados Unidos,0.15,False
+PT,Portugal,0.1,False
+DE,Alemanha,0.08,False
+KY,Ilhas Cayman,0.95,True
+LU,Luxemburgo,0.8,True
+PA,Panamá,0.9,True
+CH,Suíça,0.55,False

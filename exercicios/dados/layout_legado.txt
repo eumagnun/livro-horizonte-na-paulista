@@ -1,0 +1,17 @@
+LAYOUT DO ARQUIVO LEGACY-BILLING-V3 (largura fixa, EBCDIC/cp037)
+Documento recuperado de um manual de 2008 -- pode estar incompleto.
+
+Legenda: "Posicao" e um intervalo inclusivo (primeiro char = posicao 0).
+Em Python, para cortar o campo X que vai da posicao A ate B, use:
+    linha[A : B + 1]
+
+Campo                 Posicao (0-indexed)   Tamanho   Observacoes
+---------------------------------------------------------------------------
+transaction_id         0-10                  11        prefixo "TXN"
+customer_id             11-20                 10        prefixo "CLI"
+transaction_date        21-28                  8        formato YYYYMMDD
+transaction_type        29-38                 10        FATURA/AJUSTE/ESTORNO/PAGAMENTO
+amount (centavos)       39-52                 14        sinal (+/-) + 13 digitos, sem separador decimal
+adjustment_code         53-56                  4        "remendos" do Eduardo Costa, nem sempre documentados
+network_node            57-71                 15        identificador do no de rede de origem
+country                 72-74                  3        codigo de pais ISO-2 (com padding)
