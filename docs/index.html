@@ -23,6 +23,7 @@
       <div class="nav-links">
         <a href="#sinopse">Sinopse</a>
         <a href="#conceitos">Sobre a história</a>
+        <a href="#exercicios">Exercícios</a>
         <a href="#comprar">Comprar</a>
       </div>
     </div>
@@ -47,6 +48,10 @@
           <a class="btn btn-ghost" href="https://www.amazon.com.br/dp/B0GHQH5H15" target="_blank" rel="noopener">
             Comprar no Kindle
           </a>
+        </div>
+
+        <div class="terminal-hint" aria-hidden="true">
+          <span class="terminal-prompt">ssh soraya@jcn-legacy-bridge&nbsp;</span><span class="terminal-cursor"></span>
         </div>
       </div>
 
@@ -134,9 +139,118 @@
 
       <div class="repo-callout">
         <p>
-          Curioso(a) para praticar os conceitos do livro de verdade? Existe
-          uma trilha de exercícios gratuitos e open source, ambientada no
-          mesmo universo da JCN.
+          Curioso(a) para praticar os conceitos do livro de verdade? Veja a
+          trilha completa de exercícios gratuitos e open source, ambientada
+          no mesmo universo da JCN.
+        </p>
+        <a class="btn btn-ghost" href="#exercicios">
+          Ver a trilha de exercícios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="exercicios">
+    <div class="container">
+      <h2>Uma trilha de exercícios, capítulo a capítulo</h2>
+      <p class="timeline-intro">
+        Cada módulo transforma um conceito do livro em um exercício de
+        programação de verdade — com cenário de negócio, testes automáticos
+        e gabarito comentado. Tudo gratuito, open source e ambientado no
+        universo da JCN.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">00</div>
+          <div class="timeline-content">
+            <h3>Preparando o ambiente</h3>
+            <p>Configuração do zero, só com ferramentas open source — sem custo, sem cadastro.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">01</div>
+          <div class="timeline-content">
+            <h3>Arqueologia de dados legados</h3>
+            <p>Decodifica um arquivo de largura fixa em EBCDIC — o mesmo tipo de mainframe da JCN.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">02</div>
+          <div class="timeline-content">
+            <h3>Qualidade e contratos de dados</h3>
+            <p>"Garbage in, garbage out" na prática: limpeza, validação e regras de negócio.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">03</div>
+          <div class="timeline-content">
+            <h3>Engenharia de atributos</h3>
+            <p>Enriquecimento de dados e z-score para revelar padrões que o olho humano não vê.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">04</div>
+          <div class="timeline-content">
+            <h3>Pipelines batch vs. streaming</h3>
+            <p>A diferença entre descobrir um problema em seis horas — ou em tempo real.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">05</div>
+          <div class="timeline-content">
+            <h3>Detecção de anomalias e fraude</h3>
+            <p>Machine Learning não supervisionado encontra o que Soraya encontrou no capítulo 2.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">06</div>
+          <div class="timeline-content">
+            <h3>Clean code e Git</h3>
+            <p>Refatoração segura com testes e um fluxo real de Git e Code Review.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">07</div>
+          <div class="timeline-content">
+            <h3>Governança e auditoria</h3>
+            <p>Um log de auditoria à prova de adulteração — a "cadeia de custódia" da informação.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">08</div>
+          <div class="timeline-content">
+            <h3>Segurança: kill switch e acesso</h3>
+            <p>Controle de acesso por papéis e um interruptor de emergência com trilha auditável.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">09</div>
+          <div class="timeline-content">
+            <h3>Ética, privacidade e LGPD</h3>
+            <p>Pseudonimização e privacidade diferencial — a mesma técnica citada no capítulo final.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">10</div>
+          <div class="timeline-content">
+            <h3>Observabilidade e monitoramento</h3>
+            <p>Detecção de data drift: quando um modelo de IA para de refletir a realidade.</p>
+          </div>
+        </div>
+        <div class="timeline-item destaque">
+          <div class="timeline-marker">11</div>
+          <div class="timeline-content">
+            <h3>Projeto final: Investigação JCN</h3>
+            <p>Síntese de tudo — uma investigação de fraude completa, do arquivo bruto ao relatório.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo-callout">
+        <p>
+          Todos os módulos estão documentados e testados no repositório do
+          projeto, prontos para clonar e rodar.
         </p>
         <a class="btn btn-ghost" href="https://github.com/eumagnun/livro-horizonte-na-paulista" target="_blank" rel="noopener">
           Ver exercícios no GitHub
@@ -147,21 +261,28 @@
 
   <section id="comprar">
     <div class="container">
-      <h2>Onde encontrar o livro</h2>
-      <div class="compra-grid">
-        <div class="compra-card">
-          <h3>📖 Capa impressa</h3>
-          <p>Loja uiClap — impressão sob demanda, entrega para todo o Brasil.</p>
-          <a class="btn btn-primary" href="https://loja.uiclap.com/titulo/ua202447" target="_blank" rel="noopener">
-            Comprar impresso
-          </a>
-        </div>
-        <div class="compra-card">
-          <h3>📱 Versão digital</h3>
-          <p>Disponível na Amazon para leitura no Kindle ou no app Kindle.</p>
-          <a class="btn btn-primary" href="https://www.amazon.com.br/dp/B0GHQH5H15" target="_blank" rel="noopener">
-            Comprar no Kindle
-          </a>
+      <div class="destaque-compra">
+        <span class="ponto-anomalia" style="top: 14%; left: 92%;"></span>
+        <span class="ponto-anomalia" style="top: 78%; left: 6%;"></span>
+        <span class="ponto-anomalia" style="top: 55%; left: 97%;"></span>
+
+        <p class="compra-eyebrow"><span class="ponto-vivo"></span> Disponível agora</p>
+        <h2>Onde encontrar o livro</h2>
+        <div class="compra-grid">
+          <div class="compra-card">
+            <h3>📖 Capa impressa</h3>
+            <p>Loja uiClap — impressão sob demanda, entrega para todo o Brasil.</p>
+            <a class="btn btn-primary" href="https://loja.uiclap.com/titulo/ua202447" target="_blank" rel="noopener">
+              Comprar impresso
+            </a>
+          </div>
+          <div class="compra-card">
+            <h3>📱 Versão digital</h3>
+            <p>Disponível na Amazon para leitura no Kindle ou no app Kindle.</p>
+            <a class="btn btn-primary" href="https://www.amazon.com.br/dp/B0GHQH5H15" target="_blank" rel="noopener">
+              Comprar no Kindle
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,15 @@
 :root {
-  --bg: #0b0e14;
-  --bg-alt: #11151f;
-  --ink: #eef0f4;
-  --ink-dim: #a7adba;
-  --accent: #4fd1c5;
-  --accent-strong: #22b8ab;
-  --card-border: #232837;
+  /* Paleta derivada da própria capa: céu noturno azul-arroxeado, letreiros
+     em ciano/turquesa e o degradê laranja-pôr-do-sol da Paulista ao fundo. */
+  --bg: #0a0e1c;
+  --bg-alt: #131a30;
+  --ink: #f1f3f9;
+  --ink-dim: #a6aec4;
+  --accent: #35d6c4;
+  --accent-strong: #1fb3a3;
+  --accent-warm: #ff8a52;
+  --accent-warm-strong: #ff6a35;
+  --card-border: #242c47;
   --paper: #efe9dc;
   --paper-dark: #d8d0bd;
   --max-width: 1080px;
@@ -22,7 +26,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -5%, rgba(255, 138, 82, 0.10), transparent 60%),
+    radial-gradient(ellipse 800px 500px at 100% 10%, rgba(53, 214, 196, 0.10), transparent 55%),
+    var(--bg);
   color: var(--ink);
   font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
   line-height: 1.6;
@@ -46,8 +53,10 @@ a {
 /* ---------- Nav ---------- */
 
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
   background: rgba(11, 14, 20, 0.85);
   backdrop-filter: blur(8px);
@@ -305,7 +314,7 @@ section h2 {
 .sinopse blockquote {
   margin: 28px 0;
   padding: 18px 24px;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--accent-warm);
   background: var(--bg-alt);
   border-radius: 0 var(--radius) var(--radius) 0;
   font-style: italic;
@@ -338,6 +347,110 @@ section h2 {
   color: var(--ink-dim);
 }
 
+.terminal-hint {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+  background: #060907;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.terminal-prompt {
+  color: var(--ink-dim);
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  margin-left: 3px;
+  background: var(--accent);
+  animation: piscar-cursor 1s steps(1, end) infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes piscar-cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Timeline de exercícios ---------- */
+
+.timeline-intro {
+  color: var(--ink-dim);
+  max-width: 68ch;
+  font-family: system-ui, sans-serif;
+  margin-bottom: 32px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 0 34px;
+  padding-left: 36px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--card-border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 26px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -36px;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  border: 2px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--ink-dim);
+}
+
+.timeline-item.destaque .timeline-marker {
+  background: var(--accent-warm);
+  border-color: var(--accent-warm);
+  color: #2b1206;
+}
+
+.timeline-content h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: var(--ink-dim);
+  font-family: system-ui, sans-serif;
+  font-size: 0.88rem;
+}
+
 .repo-callout {
   margin-top: 28px;
   display: flex;
@@ -358,6 +471,102 @@ section h2 {
   flex: 1 1 320px;
 }
 
+.destaque-compra {
+  position: relative;
+  padding: 26px;
+  border-radius: calc(var(--radius) + 10px);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.destaque-compra::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  z-index: -1;
+  background: radial-gradient(circle at 22% 28%, rgba(53, 214, 196, 0.22), transparent 55%),
+    radial-gradient(circle at 78% 72%, rgba(255, 138, 82, 0.2), transparent 55%);
+  animation: respirar-glow 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes respirar-glow {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.12) rotate(6deg);
+    opacity: 1;
+  }
+}
+
+.ponto-anomalia {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff5470;
+  animation: pulsar-ponto 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ponto-anomalia:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.ponto-anomalia:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+@keyframes pulsar-ponto {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 84, 112, 0.55);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(255, 84, 112, 0);
+    opacity: 0.55;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 84, 112, 0);
+    opacity: 1;
+  }
+}
+
+.compra-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.compra-eyebrow .ponto-vivo {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulsar-ponto-vivo 1.8s ease-in-out infinite;
+}
+
+@keyframes pulsar-ponto-vivo {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(53, 214, 196, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(53, 214, 196, 0);
+  }
+}
+
 .compra-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -365,6 +574,7 @@ section h2 {
 }
 
 .compra-card {
+  position: relative;
   background: var(--bg-alt);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);

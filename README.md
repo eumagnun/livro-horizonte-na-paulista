@@ -6,7 +6,11 @@ open source**, construída em cima dos conceitos técnicos e éticos do livro
 não faz parte deste repositório.
 
 <p align="center">
-  <img src="capa_horionte_na_paulista.jpeg" width="240" alt="Capa do livro O Horizonte na Paulista">
+  <img src="docs/assets/capa.jpg" width="240" alt="Capa do livro O Horizonte na Paulista">
+</p>
+
+<p align="center">
+  🌐 <a href="https://eumagnun.github.io/livro-horizonte-na-paulista/"><strong>Landing page do livro</strong></a>
 </p>
 
 ## Sobre o livro
