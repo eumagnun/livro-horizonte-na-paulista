@@ -1,0 +1,406 @@
+:root {
+  --bg: #0b0e14;
+  --bg-alt: #11151f;
+  --ink: #eef0f4;
+  --ink-dim: #a7adba;
+  --accent: #4fd1c5;
+  --accent-strong: #22b8ab;
+  --card-border: #232837;
+  --paper: #efe9dc;
+  --paper-dark: #d8d0bd;
+  --max-width: 1080px;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 14, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 14px;
+}
+
+.nav-brand {
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.nav-links a {
+  color: var(--ink-dim);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: 56px 72px;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .hero .container {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.eyebrow {
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  line-height: 1.12;
+  margin: 0 0 18px;
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: var(--ink-dim);
+  max-width: 46ch;
+  margin: 0 0 30px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #06201d;
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--card-border);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink-dim);
+}
+
+/* ---------- 3D Book ---------- */
+
+.livro3d-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.livro3d-wrapper {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.livro3d-wrapper.dragging {
+  cursor: grabbing;
+}
+
+.livro3d {
+  width: var(--w, 300px);
+  height: var(--h, 428px);
+  margin: var(--margin, 42px);
+  perspective: var(--perspective, 600px);
+}
+
+.livro3d {
+  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.55));
+}
+
+.livro {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--rotation, -145deg));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.livro.sem-transicao {
+  transition: none;
+}
+
+.livro-capa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--paper);
+  backface-visibility: hidden;
+}
+
+.livro-capa-cc {
+  width: var(--w, 300px);
+  height: var(--h, 428px);
+  background-image: url("contracapa.jpg");
+  transform: rotateY(0deg) translateZ(var(--half-t, 12px));
+  transform-origin: right top var(--half-t, 12px);
+}
+
+.livro-capa-cp {
+  width: var(--w, 300px);
+  height: var(--h, 428px);
+  background-image: url("capa.jpg");
+  transform: rotateY(180deg) translateX(var(--w, 300px)) translateZ(var(--neg-half-t, -12px));
+  transform-origin: var(--w, 300px) top var(--neg-half-t, -12px);
+}
+
+.livro-capa-lb {
+  width: var(--t, 24px);
+  height: var(--h, 428px);
+  left: var(--spine-left, 138px);
+  background-image: url("entrecapa.jpg");
+  transform: rotateY(90deg) translateZ(var(--half-w, 150px));
+}
+
+.livro-capa-lf {
+  width: var(--t, 24px);
+  height: var(--h, 428px);
+  left: var(--spine-left, 138px);
+  background-color: var(--paper-dark);
+  transform: rotateY(-90deg) translateZ(var(--half-w, 150px));
+}
+
+.livro-capa-tp {
+  width: var(--w, 300px);
+  height: var(--t, 24px);
+  top: var(--edge-top, 202px);
+  background-color: var(--paper);
+  transform: rotateX(90deg) translateZ(var(--half-h, 214px));
+}
+
+.livro-capa-bt {
+  width: var(--w, 300px);
+  height: var(--t, 24px);
+  top: var(--edge-top, 202px);
+  background-color: var(--paper-dark);
+  transform: rotateX(-90deg) translateZ(var(--half-h, 214px));
+}
+
+.livro3d-slider {
+  width: 100%;
+  max-width: var(--w, 300px);
+  margin: 4px auto 0;
+  display: block;
+  accent-color: var(--accent);
+}
+
+.livro3d-hint {
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  margin-top: 10px;
+}
+
+/* ---------- Sections ---------- */
+
+section {
+  padding-block: 60px;
+  border-top: 1px solid var(--card-border);
+}
+
+section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 24px;
+}
+
+.sinopse p {
+  color: var(--ink-dim);
+  max-width: 68ch;
+  font-size: 1.05rem;
+}
+
+.sinopse blockquote {
+  margin: 28px 0;
+  padding: 18px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-alt);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.grid-conceitos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  font-family: system-ui, sans-serif;
+}
+
+.conceito-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.conceito-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.conceito-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+}
+
+.repo-callout {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  font-family: system-ui, sans-serif;
+}
+
+.repo-callout p {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  flex: 1 1 320px;
+}
+
+.compra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.compra-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.compra-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.compra-card p {
+  margin: 0;
+  color: var(--ink-dim);
+  font-family: system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+footer {
+  border-top: 1px solid var(--card-border);
+  padding-block: 30px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+footer a {
+  color: var(--ink-dim);
+}
