@@ -6,11 +6,13 @@ open source**, construída em cima dos conceitos técnicos e éticos do livro
 não faz parte deste repositório.
 
 <p align="center">
-  <img src="docs/assets/capa.jpg" width="240" alt="Capa do livro O Horizonte na Paulista">
+  <img src="https://livro-horizonte-na-paulista.web.app/assets/capa.jpg" width="240" alt="Capa do livro O Horizonte na Paulista">
 </p>
 
 <p align="center">
   🌐 <a href="https://livro-horizonte-na-paulista.web.app/"><strong>Landing page do livro</strong></a>
+  (código-fonte em
+  <a href="https://github.com/eumagnun/livro-horizonte-na-paulista-lp">livro-horizonte-na-paulista-lp</a>)
 </p>
 
 ## Sobre o livro
@@ -27,9 +29,9 @@ Você não precisa ter lido o livro para fazer os exercícios — cada módulo
 explica o trecho da história que o inspirou e o conceito técnico por trás
 dele.
 
-📖 **Versão impressa à venda em:** [loja.uiclap.com/titulo/ua202447](https://loja.uiclap.com/titulo/ua202447)
-
 📱 **Versão digital (Kindle):** [amazon.com.br/dp/B0GHQH5H15](https://www.amazon.com.br/dp/B0GHQH5H15)
+
+📖 **Versão impressa:** em breve, via [loja.uiclap.com/titulo/ua202447](https://loja.uiclap.com/titulo/ua202447)
 
 ## Sobre os exercícios (pasta `exercicios/`)
 
