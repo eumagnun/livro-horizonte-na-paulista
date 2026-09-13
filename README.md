@@ -94,20 +94,8 @@ NN-nome-do-modulo/
     └── solucao.py         <- gabarito comentado (só olhe depois de tentar!)
 ```
 
-### Como começar
 
-```bash
-cd exercicios
-python3 -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cd dados && python gerar_dados.py && cd ..
 
-pytest 01-arqueologia-de-dados-legados -v
-```
-
-Instruções detalhadas, passo a passo, estão em
-[`exercicios/00-preparando-o-ambiente/README.md`](exercicios/00-preparando-o-ambiente/README.md).
 
 ### Trilha recomendada
 
