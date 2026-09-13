@@ -96,9 +96,6 @@ NN-nome-do-modulo/
     └── solucao.py         <- gabarito comentado (só olhe depois de tentar!)
 ```
 
-
-
-
 ### Trilha recomendada
 
 Os módulos foram desenhados para serem feitos em ordem — cada um usa um
